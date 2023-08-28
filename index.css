@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+aside {
+  max-width: 20%;
+
+  color: white;
+  background-color: black;
+}
