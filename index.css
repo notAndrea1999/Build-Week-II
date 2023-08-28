@@ -12,3 +12,42 @@ aside {
   color: white;
   background-color: black;
 }
+/* ---------FRIENDS_BAR------------- */
+
+#friendsBar {
+  background-color: black;
+  max-width: 20%;
+  color: white;
+}
+
+.friend .img {
+  max-width: 40px;
+}
+.friend .text {
+  min-width: 50%;
+  font-size: 0.6rem;
+}
+.friend .text h5 {
+  font-size: 0.8rem;
+}
+.hour {
+  font-size: 0.6rem;
+  color: rgba(190, 190, 190, 0.723);
+}
+
+.playNav {
+  width: 100%;
+  background-color: #212121;
+}
+
+/* --------navPlay-------- */
+.songImgContainer {
+  width: 60px;
+  height: 60px;
+}
+.song h6 {
+  font-size: 0.8rem;
+}
+.song p {
+  font-size: 0.6rem;
+}
