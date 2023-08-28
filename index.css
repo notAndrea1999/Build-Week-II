@@ -171,10 +171,52 @@ span {
   background-color: black;
 }
 
-.player {
+.player-container {
   width: 100%;
-  height: 100px;
-  background-color: black;
   position: fixed;
   bottom: 0;
+}
+
+.firstBar {
+  min-width: 500px;
+}
+.volBar {
+  width: 100px;
+}
+#friendsBar {
+  background-color: black;
+  max-width: 20%;
+  color: white;
+}
+
+.friend .img {
+  max-width: 40px;
+}
+.friend .text {
+  min-width: 50%;
+  font-size: 0.6rem;
+}
+.friend .text h5 {
+  font-size: 0.8rem;
+}
+.hour {
+  font-size: 0.6rem;
+  color: rgba(190, 190, 190, 0.723);
+}
+
+.playNav {
+  width: 100%;
+  background-color: #212121;
+}
+
+/* --------navPlay-------- */
+.songImgContainer {
+  width: 60px;
+  height: 60px;
+}
+.song h6 {
+  font-size: 0.8rem;
+}
+.song p {
+  font-size: 0.6rem;
 }
