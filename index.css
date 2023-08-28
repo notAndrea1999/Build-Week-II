@@ -34,6 +34,11 @@ i {
   color: white;
 }
 
+.horizontalCardImg {
+  width: 70px;
+  height: 70px;
+}
+
 .card {
   background-color: #212121;
   padding: 10px;
