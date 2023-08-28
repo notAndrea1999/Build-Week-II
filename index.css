@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  color: white;
 }
 
 *::before,
@@ -11,4 +12,34 @@ aside {
   max-width: 20%;
   color: white;
   background-color: black;
+}
+
+.mainSection {
+  background-color: #212121;
+  width: 100%;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+}
+
+i {
+  color: white;
+  padding: 2px;
+}
+
+.firstTitle {
+  color: white;
+}
+
+.card {
+  background-color: #212121;
+  padding: 10px;
+  color: white;
+}
+
+h5 {
+  font-size: 0.6 rem;
 }
