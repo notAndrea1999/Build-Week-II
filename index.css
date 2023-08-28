@@ -51,3 +51,9 @@ aside {
 .song p {
   font-size: 0.6rem;
 }
+.firstBar {
+  min-width: 500px;
+}
+.volBar {
+  width: 100px;
+}
