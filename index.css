@@ -76,9 +76,15 @@ span {
   background-color: grey;
 }
 
+.up-bar {
+  height: 60px;
+  background-color: #1f1f1f;
+}
+
 .profilo {
   background-color: black;
   width: 150px;
+  height: 25px;
 }
 
 .profilo img {
