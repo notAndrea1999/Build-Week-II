@@ -25,10 +25,10 @@ window.onload = async () => {
       console.log(data.album.title);
       const row = document.getElementById("row");
       const col = document.createElement("div");
-      col.className = "col col-md-4 gy-2";
+      col.className = "col col-lg-4 col-md-6 gy-2";
       col.innerHTML = `
        <div class="card border border-0 d-flex flex-row">
-       <a href="./album.html?albumId=${data.album.id}"><img class="image-type-1" src="${data.album.cover_medium}" alt="" /></a>
+       <a href="./album.html?albumId=${data.album.id}"><img class="image-type-1 img-card-top" src="${data.album.cover_medium}" alt="" /></a>
        <div class="card-body"><a href="./album.html?albumId=${data.album.id}" class="text-light">${data.album.title}</a></div>
        </div>
        `;
@@ -61,7 +61,7 @@ window.onload = async () => {
       col2.innerHTML = `
     <div class="card-body-2 card border border-0 ">
       <img src="${data2.album.cover_medium}" class="card-img-top" alt="..." />
-      <div class="card-body text-light">
+      <div class="card-body card-body-text text-light">
         <h5 class="card-title">${data2.album.title}</h5>
         <p class="card-text text-secondary">
           ${data2.artist.name}

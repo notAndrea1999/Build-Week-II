@@ -162,10 +162,15 @@ span {
 .card-body {
   background-color: #2c2c2c;
   font-size: 13px;
+  padding-block: auto;
 }
 
 .card-body-2 {
-  min-height: 300px;
+  min-height: 350px;
+}
+
+.card-body-text {
+  min-height: 140px;
 }
 
 .back {
@@ -195,14 +200,16 @@ span {
 }
 
 .friend .img {
-  max-width: 40px;
+  max-width: 50px;
 }
-.friend .text {
+
+.friends-body p {
   min-width: 50%;
-  font-size: 0.6rem;
+  margin-bottom: 8px;
 }
-.friend .text h5 {
-  font-size: 0.8rem;
+
+.friends-body h5 {
+  margin-bottom: 0;
 }
 .hour {
   font-size: 0.6rem;
