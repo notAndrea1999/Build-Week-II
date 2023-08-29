@@ -220,3 +220,54 @@ span {
 .song p {
   font-size: 0.6rem;
 }
+
+/*----------Album---------------*/
+
+.main-album {
+  background-color: #1f1f1f;
+}
+
+.album-card img {
+  width: 200px;
+  height: 223px;
+}
+
+.avatar img {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 8px;
+}
+
+.album-body p {
+  font-size: 40px;
+}
+
+.play-button {
+  background-color: #1ed760;
+}
+
+.play-button i {
+  font-size: 20px;
+}
+
+.main-songs {
+  border-bottom: 0.5px solid #8e8c85;
+  color: #8e8c85;
+  font-size: 13px;
+}
+
+.bi-clock::before {
+  font-size: 13px;
+}
+
+.song p {
+  font-size: 13px;
+}
+
+.song-info h3 {
+  font-size: 13px;
+}
+
+.song-info p {
+  font-size: 13px;
+}
