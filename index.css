@@ -227,6 +227,10 @@ span {
   background-color: #1f1f1f;
 }
 
+.artist-body {
+  color: white;
+}
+
 .album-card img {
   width: 200px;
   height: 223px;
@@ -270,4 +274,82 @@ span {
 
 .song-info p {
   font-size: 13px;
+}
+
+/*----------Artist---------------*/
+
+.bi-patch-check-fill {
+  color: #3d91f4;
+}
+
+.artist-card {
+  background-image: url(https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&w=600);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-title-artist {
+  font-weight: bold;
+  font-size: 4rem;
+}
+
+.title-artist-p {
+  font-size: 18px;
+}
+
+.btn-dark-following {
+  border-color: white;
+  border-radius: 5px;
+  padding-block: 0px;
+  padding-inline: 15px;
+  margin-inline: 2%;
+  font-size: 0.7rem;
+  color: white;
+  height: 30px;
+}
+
+.album-buttons {
+  align-items: center;
+}
+
+.main-songs-artist-page {
+  color: white;
+}
+
+.artist-page-img-little {
+  width: 30px;
+  height: 30px;
+  margin-inline: 5px;
+}
+
+.white-title {
+  color: white;
+}
+.artist-page-img-round {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+}
+
+.p-visualizza-altro {
+  margin-block: 1%;
+  color: white;
+  font-size: 0.7rem;
+}
+
+.white-text {
+  color: white;
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+.badge-heart {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  bottom: 2px;
+  left: 46px;
+}
+.badge-heart i {
+  font-size: 9px;
+  padding-left: 3px;
 }
