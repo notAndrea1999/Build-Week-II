@@ -244,7 +244,10 @@ span {
 }
 
 .album-body-2 p {
-  font-size: 40px;
+  font-size: 28px;
+}
+.album-body-2 h3 {
+  font-size: 13px;
 }
 
 .play-button {
@@ -259,6 +262,14 @@ span {
   border-bottom: 0.5px solid #8e8c85;
   color: #8e8c85;
   font-size: 13px;
+}
+
+.riproduzione {
+  margin-right: 40%;
+}
+
+.ascolti {
+  margin-right: 38%;
 }
 
 .bi-clock::before {

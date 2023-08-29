@@ -1,4 +1,4 @@
-const URL = " https://striveschool-api.herokuapp.com/api/deezer/search?q=queen";
+const URL = " https://striveschool-api.herokuapp.com/api/deezer/search?q=ligabue";
 const options = {
   method: "GET",
   headers: {
@@ -28,8 +28,8 @@ window.onload = async () => {
       col.className = "col col-md-4 gy-2";
       col.innerHTML = `
        <div class="card border border-0 d-flex flex-row">
-       <img class="image-type-1" src="${data.album.cover_medium}" alt="" />
-       <div class="card-body text-light">${data.album.title}</div>
+       <a href="./album.html?albumId=${data.album.id}"><img class="image-type-1" src="${data.album.cover_medium}" alt="" /></a>
+       <div class="card-body"><a href="./album.html?albumId=${data.album.id}" class="text-light">${data.album.title}</a></div>
        </div>
        `;
       row.appendChild(col);
