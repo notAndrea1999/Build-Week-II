@@ -162,10 +162,15 @@ span {
 .card-body {
   background-color: #2c2c2c;
   font-size: 13px;
+  padding-block: auto;
 }
 
 .card-body-2 {
-  min-height: 300px;
+  min-height: 350px;
+}
+
+.card-body-text {
+  min-height: 140px;
 }
 
 .back {
@@ -195,14 +200,16 @@ span {
 }
 
 .friend .img {
-  max-width: 40px;
+  max-width: 50px;
 }
-.friend .text {
+
+.friends-body p {
   min-width: 50%;
-  font-size: 0.6rem;
+  margin-bottom: 8px;
 }
-.friend .text h5 {
-  font-size: 0.8rem;
+
+.friends-body h5 {
+  margin-bottom: 0;
 }
 .hour {
   font-size: 0.6rem;
@@ -248,7 +255,10 @@ span {
 }
 
 .album-body-2 p {
-  font-size: 40px;
+  font-size: 28px;
+}
+.album-body-2 h3 {
+  font-size: 13px;
 }
 
 .play-button {
@@ -263,6 +273,14 @@ span {
   border-bottom: 0.5px solid #8e8c85;
   color: #8e8c85;
   font-size: 13px;
+}
+
+.riproduzione {
+  margin-right: 40%;
+}
+
+.ascolti {
+  margin-right: 38%;
 }
 
 .bi-clock::before {
