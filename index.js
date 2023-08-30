@@ -37,7 +37,7 @@ window.onload = async () => {
       const firstAlbum = document.getElementById("firstAlbum-body");
       album.innerHTML = `
       <div class="img pe-3">
-      <img src="${data.album.cover_medium}" alt="" />
+      <a href="./album.html?albumId=${data.album.id}"><img src="${data.album.cover_medium}" alt="" /></a>
       </div>
       <div class="album-body">
       <h3>${data.album.title}</h3>
@@ -60,12 +60,10 @@ window.onload = async () => {
       col2.className = "col gy-3";
       col2.innerHTML = `
     <div class="card-body-2 card border border-0 ">
-      <img src="${data2.album.cover_medium}" class="card-img-top" alt="..." />
+    <a href="./album.html?albumId=${data2.album.id}" class="text-light"><img src="${data2.album.cover_medium}" class="card-img-top" alt="..." /></a>
       <div class="card-body card-body-text text-light">
-        <h5 class="card-title">${data2.album.title}</h5>
-        <p class="card-text text-secondary">
-          ${data2.artist.name}
-        </p>
+        <h5 class="card-title"><a href="./album.html?albumId=${data2.album.id}" class="text-light">${data2.album.title}</a></h5>
+        <p class="card-text text-secondary"><a class="text-light" href="./artistpage.html?artistId=${data2.artist.id}">${data2.artist.name}</a></p>
       </div>
     </div>
       `;
