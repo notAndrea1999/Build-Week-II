@@ -1,4 +1,8 @@
+// const trackId = new URLSearchParams(window.location.search).get("data.id");
+
 const URL = " https://striveschool-api.herokuapp.com/api/deezer/search?q=queen";
+// const URL2 = "https://deezerdevs-deezer.p.rapidapi.com/track/" + trackId;
+
 const options = {
   method: "GET",
   headers: {
@@ -45,7 +49,7 @@ window.onload = async () => {
       <p><a class="text-light" href="./artistpage.html?artistId=${data.artist.id}">${data.artist.name}</a></p>
       <p>Ascolta il nuovo brano di ${data.artist.name}</p>
       <div class="buttons d-flex align-items-center">
-        <button class="btn btn-success rounded-pill play" type="button">Play</button>
+        <button onclick="goPlayer(event)" class="btn btn-success rounded-pill play" type="button">Play</button>
         <button class="btn btn-primary rounded-pill bg-black salva" type="buton">Salva</button>
         <button class="btn rounded-pill bg-black dots" type="buton">...</button>
       </div>
@@ -72,4 +76,28 @@ window.onload = async () => {
   } catch (error) {
     console.log(error);
   }
+};
+
+const song = document.querySelector(".song");
+const goPlayer = async (event) => {
+  const response = await fetch(URL, options);
+  console.log(response);
+
+  const data = await response.json();
+  console.log(data);
+
+  const fullData = data.data[5];
+  console.log(fullData);
+
+  song.innerHTML = `
+    <div class="songImgContainer d-flex ms-3 my-3">
+              <img  src="${fullData.album.cover_medium}" />
+        </div>
+        <div class="d-flex flex-column my-2 mx-3">
+              <h6 class="text-white mb-0">${fullData.title}</h6>
+              <p class="text-white-50 mb-0">${fullData.artist.name}</p>
+        </div>
+    <div><i class="bi bi-heart text-white-50 ms-2"></i></div>
+    `;
+  console.log(fullData);
 };

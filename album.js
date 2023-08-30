@@ -2,6 +2,7 @@ const albumId = new URLSearchParams(window.location.search).get("albumId");
 // const trackId = new URLSearchParams(window.location.search).get("trackId");
 
 const URL = " https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId;
+// console.log(albumId);
 // const URL2 = "https://deezerdevs-deezer.p.rapidapi.com/track/" + trackId;
 
 const options = {
