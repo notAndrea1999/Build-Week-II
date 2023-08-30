@@ -293,6 +293,7 @@ span {
 
 .song-info h3 {
   font-size: 13px;
+  cursor: pointer;
 }
 
 .song-info p {

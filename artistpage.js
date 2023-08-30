@@ -49,7 +49,7 @@ window.onload = async () => {
       songs.innerHTML += `<div class="song d-flex align-items-center mb-3 mb-3">
     <p class="text-light">${counter}</p>
     <div class="song-info ms-3 d-flex flex-grow-1">
-      <img class="artist-page-img-little" src="${data.contributors[0].picture}" alt="" />
+      <img class="artist-page-img-little" src="${data.album.cover_medium}" alt="" />
       <h3 class="text-light">${data.title}</h3>
     </div>
     <p class="text-light me-5 text-end">${data.rank}</p>

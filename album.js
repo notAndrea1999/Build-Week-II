@@ -1,5 +1,9 @@
 const albumId = new URLSearchParams(window.location.search).get("albumId");
+// const trackId = new URLSearchParams(window.location.search).get("trackId");
+
 const URL = " https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId;
+// const URL2 = "https://deezerdevs-deezer.p.rapidapi.com/track/" + trackId;
+
 const options = {
   method: "GET",
   headers: {
@@ -29,7 +33,7 @@ window.onload = async () => {
   `;
 
   const tracks = data.tracks.data;
-  console.log(tracks);
+  // console.log(tracks);
 
   let counter = 1;
   tracks.forEach((track) => {
@@ -38,14 +42,43 @@ window.onload = async () => {
       <div class="song d-flex align-items-center">
       <p class="text-light">${counter}</p>
       <div class="song-info ms-3 me-auto ">
-      <h3 class="text-light ">${track.title}</h3>
-      <p class="text-secondary fw-lighter ">${track.artist.name}</p>
+      <a onclick="goToPLayer(event)"><h3 class="song-name text-light ">${track.title}</h3></a>
+      <a><p class="text-secondary fw-lighter ">${track.artist.name}</p></a>
       </div>
       <p class="ascolti text-light  ">${track.rank}</p>
       <p class="text-light ms-4 ">${(track.duration / 60).toFixed(1)} </p>
       </div>
       `;
     counter++;
-    console.log(track);
+    // console.log(track);
+  });
+};
+
+const song = document.querySelector(".song");
+const goToPLayer = async (title) => {
+  const resp = await fetch(URL, options);
+  // console.log(resp);
+
+  // console.log(trackId);
+
+  const data = await resp.json();
+  // console.log(data);
+
+  const tracks = data.tracks.data;
+  // console.log(tracks);
+
+  console.log(title);
+  tracks.forEach((track) => {
+    // console.log(track);
+    song.innerHTML = `
+   <div class="songImgContainer d-flex ms-3 my-3">
+             <img  src="${track.album.cover_medium}" />
+       </div>
+       <div class="d-flex flex-column my-2 mx-3">
+             <h6 class="text-white mb-0">${title.target.innerText}</h6>
+             <p class="text-white-50 mb-0">${track.artist.name}</p>
+       </div>
+   <div><i class="bi bi-heart text-white-50 ms-2"></i></div>
+   `;
   });
 };
