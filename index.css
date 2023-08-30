@@ -306,9 +306,10 @@ span {
 }
 
 .artist-card {
-  /* background-image: url(${artist.picture_xl}); */
+  /* background-image: url(https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&w=600); */
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 8% 8%;
 }
 
 .main-title-artist {
