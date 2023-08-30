@@ -329,7 +329,16 @@ span {
   padding-inline: 15px;
   margin-inline: 2%;
   font-size: 0.7rem;
-  color: white;
+  height: 30px;
+}
+
+.btn-dark-following:hover {
+  border-color: white;
+  border-radius: 5px;
+  padding-block: 0px;
+  padding-inline: 15px;
+  margin-inline: 2%;
+  font-size: 0.7rem;
   height: 30px;
 }
 
