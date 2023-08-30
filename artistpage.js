@@ -2,7 +2,7 @@ const URL = " https://striveschool-api.herokuapp.com/api/deezer/artist/";
 
 const artistId = new URLSearchParams(window.location.search).get("artistId");
 
-console.log("artistId: ", artistId);
+let tracklistEXT;
 
 const options = {
   method: "GET",
@@ -34,7 +34,6 @@ window.onload = async () => {
     // Funzione che modifica dinamicamente il background di artist card
 
     artistCard.style.backgroundImage = "url(" + artist.picture_xl + ")";
-    console.log(artistCard.style.backgroundImage);
 
     // Recupero brani popolari dalla tracklist
 
@@ -44,13 +43,15 @@ window.onload = async () => {
     // Foreach sui brani popolari
 
     let counter = 1;
+    // lo assegno anche alla variabile
+    tracklistEXT = tracklist.data;
     tracklist.data.forEach((data) => {
       const songs = document.getElementById("songs");
       songs.innerHTML += `<div class="song d-flex align-items-center mb-3 mb-3">
     <p class="text-light">${counter}</p>
     <div class="song-info ms-3 d-flex flex-grow-1">
-      <img class="artist-page-img-little" src="${data.contributors[0].picture}" alt="" />
-      <h3 class="text-light">${data.title}</h3>
+      <img class="artist-page-img-little" src="${data.album.cover_medium}" alt="" />
+      <h3 onclick= "playerDinamic(${data.id})" class="text-light"><a href="#">${data.title}</a></h3>      
     </div>
     <p class="text-light me-5 text-end">${data.rank}</p>
     <p class="text-light ms-4">${Math.floor(data.duration / 60)} : ${data.duration % 60} </p>
@@ -62,3 +63,73 @@ window.onload = async () => {
     console.log(error);
   }
 };
+
+// Funzione player dinamico
+function playerDinamic(input) {
+  // Cerco la traccia dove si è cliccato
+  const found = tracklistEXT.find((element) => element.id === input);
+
+  const player = document.getElementsByClassName("player-container")[0];
+  player.innerHTML = `<div class="playNav player-container d-flex justify-content-between">
+  <div class="song d-flex align-items-center">
+    <div class="songImgContainer d-flex ms-3 my-3">
+      <img class="img-fluid" src="${found.album.cover_medium}" />
+    </div>
+    <div class="d-flex flex-column my-2 mx-3">
+      <h6 class="text-white mb-0">${found.title}</h6>
+      <p class="text-white-50 mb-0">${found.contributors[0].name}</p>
+    </div>
+    <div><i class="bi bi-heart text-white-50 ms-2"></i></div>
+  </div>
+  <!-- --------play------ -->
+  <div class="play d-flex-column">
+    <div class="buttonContainer d-flex justify-content-center align-items-center">
+      <i class="bi bi-shuffle text-success mx-1"></i>
+      <i class="bi bi-skip-start-fill text-white-50 mx-1"></i>
+      <i class="fs-4 bi bi-play-circle-fill text-white mx-1"></i>
+      <i class="bi bi-skip-end-fill text-white-50 mx-1"></i>
+      <i class="bi bi-repeat text-success mx-1"></i>
+    </div>
+    <!-- ----------------- -->
+
+    <div class="timing d-flex justify-content-between align-items-center">
+      <p class="text-white-50 mb-0 pe-2">0:58</p>
+      <div class="containerProgressBar">
+        <div
+          class="progress firstBar bg-secondary"
+          role="progressbar"
+          aria-label="Example 1px high"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style="height: 7px"
+        >
+          <div class="progress-bar bg-white" style="width: 25%"></div>
+        </div>
+      </div>
+
+      <p class="text-white-50 mb-0 ps-2">3:34</p>
+    </div>
+  </div>
+  <div class="volume d-flex align-items-center">
+    <i class="bi bi-mic text-white-50 pe-2"></i>
+    <i class="bi bi-list text-white-50 pe-2"></i>
+    <i class="bi bi-speaker text-white-50 pe-2"></i>
+    <i class="bi bi-volume-up text-white-50 pe-2"></i>
+    <div class="containerProgressBar pe-2">
+      <div
+        class="progress volBar"
+        role="progressbar"
+        aria-label="Example 1px high"
+        aria-valuenow="25"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        style="height: 7px"
+      >
+        <div class="progress bg-white" style="width: 25%"></div>
+      </div>
+    </div>
+    <i class="bi bi-arrows-fullscreen text-white-50 pe-2"></i>
+  </div>
+</div>`;
+}
