@@ -42,7 +42,7 @@ window.onload = async () => {
       <div class="album-body">
       <h3>${data.album.title}</h3>
       <h1>${data.title}</h1>
-      <p>${data.artist.name}</p>
+      <p><a class="text-light" href="./artistpage.html?artistId=${data.artist.id}">${data.artist.name}</a></p>
       <p>Ascolta il nuovo brano di ${data.artist.name}</p>
       <div class="buttons d-flex align-items-center">
         <button class="btn btn-success rounded-pill play" type="button">Play</button>
