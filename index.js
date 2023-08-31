@@ -37,10 +37,10 @@ window.onload = async () => {
 
       const firstAlbum = document.getElementById("firstAlbum-body");
       album.innerHTML = `
-      <div class="img pe-3 d-lg-inline-flex d-md-inline-flex d-sm-none ">
+      <div class="img pe-3 d-lg-inline-flex d-md-inline-flex d-none ">
       <a href="./album.html?albumId=${data.album.id}"><img src="${data.album.cover_medium}" alt="" /></a>
       </div>
-      <div class="album-body d-lg-block d-md-block d-sm-none">
+      <div class="album-body d-lg-block d-md-block d-none">
       <h3>${data.album.title}</h3>
       <h1>${data.title}</h1>
       <p><a class="text-light" href="./artistpage.html?artistId=${data.artist.id}">${data.artist.name}</a></p>
@@ -94,7 +94,7 @@ const goPlayer = async (event) => {
               <h6 class="text-white mb-0">${fullData.title}</h6>
               <p class="text-white-50 mb-0">${fullData.artist.name}</p>
         </div>
-    <div><i class="bi bi-heart text-white-50 ms-2 d-md-flex d-sm-none"></i></div>
+    <div><i class="bi bi-heart text-white-50 ms-2 d-md-flex d-none"></i></div>
     `;
   console.log(fullData);
 };

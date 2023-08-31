@@ -31,7 +31,7 @@ const caricamento = async () => {
     data.forEach((data) => {
       console.log(data.album.title);
       const col = document.createElement("div");
-      col.className = "col col-lg-4 col-md-6 gy-2";
+      col.className = "col col-lg-4 col-md-6 col-sm-6 gy-2";
       col.innerHTML = `
        <div class="card border border-0 d-flex flex-row">
        <a href="./album.html?albumId=${data.album.id}"><img class="image-type-1 img-card-top" src="${data.album.cover_medium}" alt="" /></a>
@@ -42,10 +42,10 @@ const caricamento = async () => {
 
       //   const firstAlbum = document.getElementById("firstAlbum-body");
       album.innerHTML = `
-      <div class="img pe-3">
+      <div class="img pe-3 d-lg-inline-flex d-md-inline-flex d-none">
       <a href="./album.html?albumId=${data.album.id}"><img src="${data.album.cover_medium}" alt="" /></a>
       </div>
-      <div class="album-body">
+      <div class="album-body d-lg-block d-md-block d-none">
       <h3>${data.album.title}</h3>
       <h1>${data.title}</h1>
       <p><a class="text-light" href="./artistpage.html?artistId=${data.artist.id}">${data.artist.name}</a></p>
@@ -66,7 +66,7 @@ const caricamento = async () => {
       col2.innerHTML = `
     <div class="card-body-2 card border border-0 ">
     <a href="./album.html?albumId=${data2.album.id}" class="text-light"><img src="${data2.album.cover_medium}" class="card-img-top" alt="..." /></a>
-      <div class="card-body card-body-text text-light">
+      <div class=" card-body-text text-light">
         <h5 class="card-title"><a href="./album.html?albumId=${data2.album.id}" class="text-light">${data2.album.title}</a></h5>
         <p class="card-text text-secondary"><a class="text-light" href="./artistpage.html?artistId=${data2.artist.id}">${data2.artist.name}</a></p>
       </div>
