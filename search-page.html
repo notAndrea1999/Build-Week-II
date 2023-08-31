@@ -115,25 +115,29 @@
       </aside>
       <div class="main-space container-fluid">
         <div class="up-bar d-flex position-sticky z-3 top-0">
-          <div class="back-forward-buttons mt-2 me-auto">
-            <button type="button" class="back btn btn-sm rounded-circle text-secondary">
-              <a onclick="history.back()"><i class="bi bi-caret-left"></i></a>
-            </button>
-            <button type="button" class="forward btn btn-sm rounded-circle text-secondary">
-              <a onclick="history.forward()"><i class="bi bi-caret-right"></i></a>
-            </button>
+          <div class="d-flex me-auto w-50">
+            <div class="back-forward-buttons mt-2 w-25 me-1 d-none d-lg-block">
+              <button type="button" class="back btn btn-sm rounded-circle text-secondary">
+                <a onclick="history.back()"><i class="bi bi-caret-left"></i></a>
+              </button>
+              <button type="button" class="forward btn btn-sm rounded-circle text-secondary">
+                <a onclick="history.forward()"><i class="bi bi-caret-right"></i></a>
+              </button>
+            </div>
+            <div class="input-group mb-3 ms-3 mt-2" id="searchContainer">
+              <button id="searchButton" type="submit" class="btn btn-secondary bg-secondary border-0 text-black">
+                <i class="bi bi-search pe-3"></i>
+              </button>
+              <input
+                id="searchInput"
+                type="text"
+                class="form-button bg-secondary text-black form-control border-0"
+                placeholder=" Artist, song or podcast"
+                aria-label="Search"
+                aria-describedby="basic-addon2 "
+              />
+            </div>
           </div>
-          <form id="searchContainer" class="mb-3 align-items-center d-flex">
-            <input
-              id="searchInput"
-              type="text"
-              class="form-control bg-secondary"
-              placeholder="Search"
-              aria-label="Search"
-              aria-describedby="basic-addon1"
-            />
-            <button id="searchButton" type="submit" class="btn btn-primary bg-secondary">Search</button>
-          </form>
           <button
             class="off-canvas-button btn me-3 p-0"
             type="button"

@@ -427,3 +427,8 @@ span {
 .up-bar-artistpage {
   height: 60px;
 }
+
+/* input:focus {
+  outline: none;
+  outline-color: red;
+} */
