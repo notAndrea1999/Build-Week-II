@@ -387,3 +387,17 @@ span {
   font-size: 9px;
   padding-left: 3px;
 }
+
+.background-cont {
+  /* background-image: url(https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&w=600); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 15% 15%;
+  min-height: 10%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.up-bar-artistpage {
+  height: 60px;
+}

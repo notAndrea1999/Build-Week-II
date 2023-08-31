@@ -114,38 +114,40 @@
         </nav>
       </aside>
       <div class="main-album container-fluid">
-        <div class="up-bar d-flex position-sticky top-0">
-          <div class="back-forward-buttons mt-2 me-auto">
-            <button type="button" class="back btn btn-sm rounded-circle text-secondary">
-              <a onclick="history.back()"><i class="bi bi-caret-left"></i></a>
+        <div id="backgroundCont" class="background-cont">
+          <div class="up-bar-artistpage d-flex position-sticky top-0">
+            <div class="back-forward-buttons mt-2 me-auto">
+              <button type="button" class="back btn btn-sm rounded-circle text-secondary">
+                <a onclick="history.back()"><i class="bi bi-caret-left"></i></a>
+              </button>
+              <button type="button" class="forward btn btn-sm rounded-circle text-secondary">
+                <a onclick="history.forward()"><i class="bi bi-caret-right"></i></a>
+              </button>
+            </div>
+            <button
+              class="off-canvas-button btn me-3 p-0"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
+            >
+              <i class="bi bi-people text-secondary"></i>
             </button>
-            <button type="button" class="forward btn btn-sm rounded-circle text-secondary">
-              <a onclick="history.forward()"><i class="bi bi-caret-right"></i></a>
-            </button>
+            <div class="profilo d-flex align-items-center mt-3 gap-2 rounded-pill">
+              <a href="#"><img class="rounded-circle" src="./assets/imgs/main/image-9.jpg" alt="" /></a>
+              <a href="#" class="me-3">Team 8... </a>
+              <a href="#"><i class="bi bi-caret-down text-light"></i></a>
+            </div>
           </div>
-          <button
-            class="off-canvas-button btn me-3 p-0"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasRight"
-            aria-controls="offcanvasRight"
-          >
-            <i class="bi bi-people text-secondary"></i>
-          </button>
-          <div class="profilo d-flex align-items-center mt-3 gap-2 rounded-pill">
-            <a href="#"><img class="rounded-circle" src="./assets/imgs/main/image-9.jpg" alt="" /></a>
-            <a href="#" class="me-3">Team 8... </a>
-            <a href="#"><i class="bi bi-caret-down text-light"></i></a>
-          </div>
-        </div>
-        <div id="artistCard" class="artist-card d-flex justify-content-start ms-2">
-          <!-- <div class="artist-body d-flex flex-column justify-content-end">
+          <div id="artistCard" class="artist-card d-flex justify-content-start ms-2">
+            <!-- <div class="artist-body d-flex flex-column justify-content-end">
             <p class="title-artist-p mt-5 ps-3 mb-1"><i class="bi bi-patch-check-fill"></i> Arista verificato</p>
             <h1 id="artistMainTitle" class="main-title-artist mt-3 ps-3">Yellowcard</h1>
             <div class="avatar d-flex align-items-center">
               <p id="numbOfFan" class="title-artist-p mt-5 ps-3">3.433.158 ascoltatori mensili</p>
             </div>
           </div> -->
+          </div>
         </div>
         <div class="album-buttons d-flex mt-4">
           <div class="play-button rounded-circle">
