@@ -31,7 +31,7 @@ const caricamento = async () => {
     data.forEach((data) => {
       console.log(data.album.title);
       const col = document.createElement("div");
-      col.className = "col col-lg-4 col-md-6 gy-2";
+      col.className = "col col-lg-4 col-md-6 col-sm-12 gy-2";
       col.innerHTML = `
        <div class="card border border-0 d-flex flex-row">
        <a href="./album.html?albumId=${data.album.id}"><img class="image-type-1 img-card-top" src="${data.album.cover_medium}" alt="" /></a>
@@ -43,9 +43,9 @@ const caricamento = async () => {
       //   const firstAlbum = document.getElementById("firstAlbum-body");
       album.innerHTML = `
       <div class="img pe-3">
-      <a href="./album.html?albumId=${data.album.id}"><img src="${data.album.cover_medium}" alt="" /></a>
+      <a href="./album.html?albumId=${data.album.id}"><img class='img-fluid ' src="${data.album.cover_medium}" alt="" /></a>
       </div>
-      <div class="album-body">
+      <div class="album-body d-none d-sm-block ">
       <h3>${data.album.title}</h3>
       <h1>${data.title}</h1>
       <p><a class="text-light" href="./artistpage.html?artistId=${data.artist.id}">${data.artist.name}</a></p>
@@ -125,3 +125,59 @@ const goPlayer = async (event) => {
     `;
   console.log(fullData);
 };
+
+// window.onload = async () => {
+//   try {
+//     // event.preventDefault();
+//     const row = document.getElementById("row");
+//     const row2 = document.getElementById("row-2");
+//     row.innerHTML = "";
+//     row2.innerHTML = "";
+
+//     const resp = await fetch(URL, options);
+//     // console.log(resp);
+
+//     const infos = await resp.json();
+//     console.log(infos);
+
+//     const data = infos.data.slice(0, 6);
+//     const data2 = infos.data.slice(0, 5);
+
+//     // console.log(data);
+//     // console.log(data2);
+
+//     data.forEach((data) => {
+//       console.log(data.album.title);
+//       const col = document.createElement("div");
+//       col.className = "col col-lg-4 col-md-6 gy-2";
+//       col.innerHTML = `
+//        <div class="card border border-0 d-flex flex-row">
+//        <a href="./album.html?albumId=${data.album.id}"><img class="image-type-1 img-card-top" src="${data.album.cover_medium}" alt="" /></a>
+//        <div class="card-body"><a href="./album.html?albumId=${data.album.id}" class="text-light">${data.album.title}</a></div>
+//        </div>
+//        `;
+//       row.appendChild(col);
+
+//       //   const firstAlbum = document.getElementById("firstAlbum-body");
+//       album1.innerHTML = `
+//       <div class="img pe-3">
+//       <a href="./album.html?albumId=${data.album.id}"><img src="${data.album.cover_medium}" alt="" /></a>
+//       </div>
+//       <div class="album-body">
+//       <h3>${data.album.title}</h3>
+//       <h1>${data.title}</h1>
+//       <p><a class="text-light" href="./artistpage.html?artistId=${data.artist.id}">${data.artist.name}</a></p>
+//       <p>Ascolta il nuovo brano di ${data.artist.name}</p>
+//       <div class="buttons d-flex align-items-center">
+//         <button onclick="goPlayer(event)" class="btn btn-success rounded-pill play" type="button">Play</button>
+//         <button class="btn btn-primary rounded-pill bg-black salva" type="buton">Salva</button>
+//         <button class="btn rounded-pill bg-black dots" type="buton">...</button>
+//       </div>
+//     </div>
+
+//       `;
+//     });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
