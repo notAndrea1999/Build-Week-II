@@ -422,8 +422,16 @@ span {
   min-height: 10%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .up-bar-artistpage {
   height: 60px;
 }
+
+/* input:focus {
+  outline: none;
+  outline-color: red;
+} */
