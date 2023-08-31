@@ -94,7 +94,7 @@ const goPlayer = async (event) => {
               <h6 class="text-white mb-0">${fullData.title}</h6>
               <p class="text-white-50 mb-0">${fullData.artist.name}</p>
         </div>
-    <div><i class="bi bi-heart text-white-50 ms-2"></i></div>
+    <div><i class="bi bi-heart text-white-50 ms-2 d-md-flex d-sm-none"></i></div>
     `;
   console.log(fullData);
 };
