@@ -1,7 +1,4 @@
-// const trackId = new URLSearchParams(window.location.search).get("data.id");
-
 const URL = " https://striveschool-api.herokuapp.com/api/deezer/search?q=queen";
-// const URL2 = "https://deezerdevs-deezer.p.rapidapi.com/track/" + trackId;
 
 const options = {
   method: "GET",
@@ -22,8 +19,8 @@ window.onload = async () => {
     const data = infos.data.slice(0, 6);
     const data2 = infos.data.slice(0, 5);
 
-    console.log(data);
-    console.log(data2);
+    // console.log(data);
+    // console.log(data2);
 
     data.forEach((data) => {
       console.log(data.album.title);
