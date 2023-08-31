@@ -25,15 +25,15 @@ window.onload = async () => {
     <p class="title-artist-p mt-5 ps-3 mb-1"><i class="bi bi-patch-check-fill"></i> Arista verificato</p>
     <h1 id="artistMainTitle" class="main-title-artist mt-3 ps-3">${artist.name}</h1>
     <div class="avatar d-flex align-items-center">
-      <p id="numbOfFan" class="title-artist-p mt-5 ps-1">${new Intl.NumberFormat().format(
+      <p id="numbOfFan" class="title-artist-p mt-5 ps-3">${new Intl.NumberFormat().format(
         artist.nb_fan
       )} ascoltatori mensili</p>
     </div>
   </div>`;
 
     // Funzione che modifica dinamicamente il background di artist card
-
-    artistCard.style.backgroundImage = "url(" + artist.picture_xl + ")";
+    const backgroundCont = document.getElementById("backgroundCont");
+    backgroundCont.style.backgroundImage = "url(" + artist.picture_xl + ")";
 
     // Recupero brani popolari dalla tracklist
 
