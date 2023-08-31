@@ -31,7 +31,7 @@ const caricamento = async () => {
     data.forEach((data) => {
       console.log(data.album.title);
       const col = document.createElement("div");
-      col.className = "col col-lg-4 col-md-6 col-sm-6 gy-2";
+      col.className = "col col-lg-4 col-md-6 col-6 gy-2";
       col.innerHTML = `
        <div class="card border border-0 d-flex flex-row">
        <a href="./album.html?albumId=${data.album.id}"><img class="image-type-1 img-card-top" src="${data.album.cover_medium}" alt="" /></a>
