@@ -8,9 +8,15 @@ const options = {
   },
 };
 
-window.onload = async () => {
+const caricamento = async () => {
   try {
-    const resp = await fetch(URL, options);
+    event.preventDefault();
+    const row = document.getElementById("row");
+    const row2 = document.getElementById("row-2");
+    row.innerHTML = "";
+    row2.innerHTML = "";
+
+    const resp = await fetch(URL1, options);
     // console.log(resp);
 
     const infos = await resp.json();
@@ -24,7 +30,6 @@ window.onload = async () => {
 
     data.forEach((data) => {
       console.log(data.album.title);
-      const row = document.getElementById("row");
       const col = document.createElement("div");
       col.className = "col col-lg-4 col-md-6 gy-2";
       col.innerHTML = `
@@ -35,7 +40,7 @@ window.onload = async () => {
        `;
       row.appendChild(col);
 
-      const firstAlbum = document.getElementById("firstAlbum-body");
+      //   const firstAlbum = document.getElementById("firstAlbum-body");
       album.innerHTML = `
       <div class="img pe-3">
       <a href="./album.html?albumId=${data.album.id}"><img src="${data.album.cover_medium}" alt="" /></a>
@@ -56,7 +61,6 @@ window.onload = async () => {
     });
 
     data2.forEach((data2) => {
-      const row2 = document.getElementById("row-2");
       const col2 = document.createElement("div");
       col2.className = "col gy-3";
       col2.innerHTML = `
@@ -75,9 +79,32 @@ window.onload = async () => {
   }
 };
 
+// ---------------Dinamic Fetch---------------------
+
+// const showSearchButton = document.getElementById("showSearchButton");
+// showSearchButton.addEventListener("click", function () {
+//   //   event.preventDefault();
+//   console.log("hai cliccato");
+// });
+
+const searchContainer = document.getElementById("searchContainer");
+
+const searchButton = document.getElementById("searchButton");
+const searchInput = document.getElementById("searchInput");
+
+searchButton.addEventListener("click", function () {
+  const searchTerm = searchInput.value;
+  URL1 = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchTerm}`;
+
+  console.log("Hai cercato:", searchTerm);
+  console.log("URL aggiornato:", URL1);
+
+  caricamento();
+});
+
 const song = document.querySelector(".song");
 const goPlayer = async (event) => {
-  const response = await fetch(URL, options);
+  const response = await fetch(URL1, options);
   console.log(response);
 
   const data = await response.json();
