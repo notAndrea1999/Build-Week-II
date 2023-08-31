@@ -49,12 +49,14 @@ window.onload = async () => {
       const songs = document.getElementById("songs");
       songs.innerHTML += `<div class="song d-flex align-items-center mb-3 mb-3">
     <p class="text-light">${counter}</p>
-    <div class="song-info ms-3 d-flex flex-grow-1">
+    <div class="song-info ms-3 d-flex me-auto">
       <img class="artist-page-img-little" src="${data.album.cover_medium}" alt="" />
-      <h3 onclick= "playerDinamic(${data.id})" class="text-light"><a href="#">${data.title}</a></h3>      
+      <h3 onclick= "playerDinamic(${data.id})" class="text-light"><a href="javascript:void(0)" class="text-light">${
+        data.title
+      }</a></h3>      
     </div>
     <p class="text-light me-5 text-end">${data.rank}</p>
-    <p class="text-light ms-4">${Math.floor(data.duration / 60)} : ${data.duration % 60} </p>
+    <p class="text-light ms-5">${(data.duration / 60).toFixed(1)} </p>
   </div>`;
 
       counter++;

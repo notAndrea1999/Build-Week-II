@@ -2,6 +2,7 @@ const albumId = new URLSearchParams(window.location.search).get("albumId");
 // const trackId = new URLSearchParams(window.location.search).get("trackId");
 
 const URL = " https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId;
+// console.log(albumId);
 // const URL2 = "https://deezerdevs-deezer.p.rapidapi.com/track/" + trackId;
 
 const options = {
@@ -18,19 +19,22 @@ window.onload = async () => {
   const data = await resp.json();
   //   console.log(data);
   const albumCard = document.getElementById("album-card");
+
+  const yearMonthDay = new Date(data.release_date);
+  let year = yearMonthDay.getFullYear();
+  console.log(year);
+
   albumCard.innerHTML = `
     <img src="${data.cover_medium}" alt="" />
-          <div class="album-body-2 d-flex flex-column justify-content-end">
-            <h3 class="mt-5 ps-3 text-light">Album</h3>
-            <p class="mt-3 ps-3 text-light">${data.title}</p>
-            <div class="avatar d-flex align-items-center">
-              <img class="mt-3 ms-3 rounded-circle" src="${data.cover_small}" alt="" />
-              <h3 class="mt-3 ps-1 text-light">${data.artist.name} • ${data.release_date} • ${
-    data.nb_tracks
-  } brano/i, ${parseInt(data.duration / 60)} min </h3>
-            </div>
-</div> 
-  `;
+    <div class="album-body-2 d-flex flex-column justify-content-end">
+    <h3 class="mt-5 ps-3 text-light">Album</h3>
+    <p class="mt-3 ps-3 text-light">${data.title}</p>
+    <div class="avatar d-flex align-items-center">
+    <img class="mt-3 ms-3 rounded-circle" src="${data.cover_small}" alt="" />
+    <h3 class="mt-3 ps-1 text-light">${data.artist.name} • ${year} • ${data.nb_tracks} brano/i, ${parseInt(
+    data.duration / 60
+  )} min </h3></div>
+   </div> `;
 
   const tracks = data.tracks.data;
   // console.log(tracks);
