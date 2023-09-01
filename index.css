@@ -77,7 +77,13 @@ span {
 
 .up-bar {
   height: 60px;
-  background-color: #1f1f1f;
+  /* background-color: #1f1f1f; */
+}
+
+.bg-container {
+  min-height: 300px;
+  background: rgb(218, 189, 77);
+  background: linear-gradient(180deg, rgba(218, 189, 77, 1) 0%, rgba(218, 189, 77, 1) 32%, rgba(31, 31, 31, 1) 100%);
 }
 
 .profilo {
@@ -466,6 +472,23 @@ span {
 
 .up-bar-artistpage {
   height: 60px;
+}
+.up-bar-search button:first-of-type {
+  background-color: black;
+}
+
+.up-bar-search button .bi-caret-left {
+  color: grey;
+}
+
+@media only screen and (max-width: 766px) {
+  .up-bar-search button:first-of-type {
+    background-color: transparent;
+  }
+
+  .up-bar-search button .bi-caret-left {
+    color: white;
+  }
 }
 
 /* input:focus {
