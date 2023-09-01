@@ -35,6 +35,19 @@ window.onload = async () => {
     const backgroundCont = document.getElementById("backgroundCont");
     backgroundCont.style.backgroundImage = "url(" + artist.picture_xl + ")";
 
+    // Sezione like dinamica
+
+    const spanLikeSection1 = document.getElementById("spanLikeSection1");
+    const spanLikeSection2 = document.getElementById("spanLikeSection2");
+
+    spanLikeSection1.innerHTML = `${artist.name}`;
+    spanLikeSection2.innerHTML = `${artist.name}`;
+
+    const imgLikeSection = document.getElementsByClassName("artist-page-img-round")[0];
+    imgLikeSection.src = artist.picture;
+    const imgLikeSection1 = document.getElementsByClassName("artist-page-img-round")[1];
+    imgLikeSection1.src = artist.picture;
+
     // Recupero brani popolari dalla tracklist
 
     const respTrack = await fetch(artist.tracklist, options);

@@ -17,7 +17,7 @@ window.onload = async () => {
   const resp = await fetch(URL, options);
   //   console.log(resp);
   const data = await resp.json();
-  //   console.log(data);
+  // console.log(data);
   const albumCard = document.getElementById("album-card");
 
   const yearMonthDay = new Date(data.release_date);
@@ -25,15 +25,17 @@ window.onload = async () => {
   console.log(year);
 
   albumCard.innerHTML = `
-    <img src="${data.cover_medium}" alt="" />
-    <div class="album-body-2 d-flex flex-column justify-content-end">
-    <h3 class="mt-5 ps-3 text-light">Album</h3>
-    <p class="mt-3 ps-3 text-light">${data.title}</p>
-    <div class="avatar d-flex align-items-center">
-    <img class="mt-3 ms-3 rounded-circle" src="${data.cover_small}" alt="" />
-    <h3 class="mt-3 ps-1 text-light">${data.artist.name} • ${year} • ${data.nb_tracks} brano/i, ${parseInt(
-    data.duration / 60
-  )} min </h3></div>
+    <img id="album-img" class="first-album-img align-self-md-start align-self-center " src="${
+      data.cover_medium
+    }" alt="" />
+    <div class="album-body-2 d-flex flex-column justify-content-end ">
+    <h3 class="mt-md-5 mt-2 ps-3 d-md-block order-md-0 order-5 ">Album<i class="bi bi-dot align-middle d-md-none d-inline"></i><span class="d-md-none d-inline">${year}</span></h3>
+    <p class="mt-3 mb-md-3 mb-2 ps-3 text-light">${data.title}</p>
+    <div class="avatar d-flex align-items-center mt-md-3 mb-md-0 mt-2 mb-2">
+    <img class=" ms-3 rounded-circle" src="${data.cover_small}" alt="" />
+    <h3 class=" ps-1 text-light">${data.artist.name} <span class="d-md-inline d-none">• ${year} • ${
+    data.nb_tracks
+  } brano/i, ${parseInt(data.duration / 60)} min</span> </h3></div>
    </div> `;
 
   const tracks = data.tracks.data;
@@ -49,8 +51,9 @@ window.onload = async () => {
       <a onclick="goToPLayer(event)"><h3 class="song-name text-light ">${track.title}</h3></a>
       <a><p class="text-secondary fw-lighter ">${track.artist.name}</p></a>
       </div>
-      <p class="ascolti text-light  ">${track.rank}</p>
-      <p class="text-light ms-4 ">${(track.duration / 60).toFixed(1)} </p>
+      <p class="ascolti text-light d-md-flex d-none">${track.rank}</p>
+      <i class="bi bi-three-dots-vertical text-secondary d-md-none d-flex"></i>
+      <p class="text-light ms-4 d-md-flex d-none ">${(track.duration / 60).toFixed(1)} </p>
       </div>
       `;
     counter++;
@@ -82,7 +85,7 @@ const goToPLayer = async (title) => {
              <h6 class="text-white mb-0">${title.target.innerText}</h6>
              <p class="text-white-50 mb-0">${track.artist.name}</p>
        </div>
-   <div><i class="bi bi-heart text-white-50 ms-2"></i></div>
+   <div><i class="bi bi-heart text-white-50 ms-2 d-md-block d-none"></i></div>
    `;
   });
 };
