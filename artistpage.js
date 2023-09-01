@@ -94,11 +94,11 @@ function playerDinamic(input) {
       <h6 class="text-white mb-0">${found.title}</h6>
       <p class="text-white-50 mb-0">${found.contributors[0].name}</p>
     </div>
-    <div><i class="bi bi-heart text-white-50 ms-2"></i></div>
+    <div><i class="bi bi-heart text-white-50 d-md-flex d-none "></i></div>
   </div>
   <!-- --------play------ -->
-  <div class="play d-flex-column">
-    <div class="buttonContainer d-flex justify-content-center align-items-center">
+  <div class="play d-flex-column  ">
+    <div class="buttonContainer d-flex justify-content-center align-items-center d-md-flex d-none">
       <i class="bi bi-shuffle text-success mx-1"></i>
       <i class="bi bi-skip-start-fill text-white-50 mx-1"></i>
       <i class="fs-4 bi bi-play-circle-fill text-white mx-1"></i>
@@ -107,7 +107,7 @@ function playerDinamic(input) {
     </div>
     <!-- ----------------- -->
 
-    <div class="timing d-flex justify-content-between align-items-center">
+    <div class="timing d-flex justify-content-between align-items-center d-md-flex d-none">
       <p class="text-white-50 mb-0 pe-2">0:58</p>
       <div class="containerProgressBar">
         <div
@@ -127,11 +127,13 @@ function playerDinamic(input) {
     </div>
   </div>
   <div class="volume d-flex align-items-center">
-    <i class="bi bi-mic text-white-50 pe-2"></i>
-    <i class="bi bi-list text-white-50 pe-2"></i>
+    <i class="bi bi-mic text-white-50 pe-2 d-md-block d-none"></i>
+    <i class="bi bi-list text-white-50 pe-2 d-md-block d-none"></i>
     <i class="bi bi-speaker text-white-50 pe-2"></i>
-    <i class="bi bi-volume-up text-white-50 pe-2"></i>
-    <div class="containerProgressBar pe-2">
+    <i class="bi bi-heart text-white-50 d-md-none d-flex d-md-none d-flex "></i>
+    <i class="bi bi-play-fill text-white-50 pe-2 d-md-none d-flex fs-2"></i>
+    <i class="bi bi-volume-up text-white-50 pe-2 d-md-block d-none"></i>
+    <div class="containerProgressBar pe-2 d-md-block d-none">
       <div
         class="progress volBar"
         role="progressbar"
@@ -144,7 +146,8 @@ function playerDinamic(input) {
         <div class="progress bg-white" style="width: 25%"></div>
       </div>
     </div>
-    <i class="bi bi-arrows-fullscreen text-white-50 pe-2"></i>
+    <i class="bi bi-arrows-fullscreen text-white-50 pe-2 d-md-flex d-none"></i>
   </div>
-</div>`;
+</div>
+`;
 }
