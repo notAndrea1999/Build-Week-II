@@ -17,7 +17,7 @@
   <body>
     <!-- Navbar -->
     <main class="d-flex">
-      <aside class="pt-4">
+      <aside class="pt-4 d-lg-inline-flex d-none">
         <nav id="side-nav-bar" class="d-flex flex-column">
           <ul class="list-style-none mt-3 ps-3">
             <a href="./index.html"
@@ -116,16 +116,19 @@
       <div class="main-album container-fluid">
         <div class="up-bar d-flex position-sticky top-0">
           <div class="back-forward-buttons mt-2 me-auto">
-            <button type="button" class="back btn btn-sm rounded-circle text-secondary">
+            <button
+              type="button"
+              class="back btn btn-sm rounded-circle text-md-secondary bg-md-auto bg-transparent text-light"
+            >
               <a onclick="history.back()"><i class="bi bi-caret-left"></i></a>
             </button>
-            <button type="button" class="forward btn btn-sm rounded-circle text-secondary">
+            <button type="button" class="forward btn btn-sm rounded-circle text-secondary d-md-inline-block d-none">
               <a onclick="history.forward()"><i class="bi bi-caret-right"></i></a>
             </button>
           </div>
 
           <button
-            class="off-canvas-button btn me-3 p-0"
+            class="off-canvas-button btn me-3 p-0 d-md-block d-none"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasRight"
@@ -133,13 +136,13 @@
           >
             <i class="bi bi-people text-secondary"></i>
           </button>
-          <div class="profilo d-flex align-items-center mt-3 gap-2 rounded-pill">
+          <div class="profilo d-flex align-items-center mt-3 gap-2 rounded-pill d-md-flex d-none">
             <a href="#"><img class="rounded-circle" src="./assets/imgs/main/image-9.jpg" alt="" /></a>
             <a href="#" class="me-3">Team 8... </a>
             <a href="#"><i class="bi bi-caret-down text-light"></i></a>
           </div>
         </div>
-        <div id="album-card" class="album-card d-flex justify-content-start ms-2">
+        <div id="album-card" class="album-card d-flex justify-content-start ms-2 flex-md-row flex-column">
           <!-- <img src="./assets/imgs/main/image-18.jpg" alt="" />
           <div class="album-body-2 d-flex flex-column justify-content-end">
             <h3 class="mt-5 ps-3 text-light">Album</h3>
@@ -150,17 +153,26 @@
             </div>
           </div> -->
         </div>
-        <hr / class="text-light">
-        <div class="album-buttons d-flex mt-4">
+        <hr / class="text-light d-none">
+        <div class="album-buttons d-flex mt-md-4 mt-2">
           <div class="play-button rounded-circle">
-            <button class="btn"><i class="bi bi-play-fill"></i></button>
+            <button class="btn d-md-block d-none"><i class="bi bi-play-fill"></i></button>
           </div>
-          <button class="btn text-secondary ms-2"><i class="bi bi-heart"></i></button>
+          <button class="btn ms-2"><i class="bi bi-heart"></i></button>
           <button class="btn text-secondary ps-1"><i class="bi bi-arrow-down-circle"></i></button>
-          <button class="btn text-secondary ps-1"><i class="bi bi-three-dots"></i></button>
+          <button class="btn text-secondary ps-1 d-md-none d-block me-auto">
+            <i class="bi bi-three-dots-vertical"></i>
+          </button>
+          <button class="btn text-secondary ps-1 d-md-block d-none">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <button class="btn text-secondary d-md-none d-block"><i class="bi bi-shuffle"></i></button>
+          <div class="play-button rounded-circle">
+            <button class="btn d-md-none d-block text-light"><i class="bi bi-play-fill"></i></button>
+          </div>
         </div>
         <div class="main-songs mt-3">
-          <div class="songs-body d-flex align-items-end">
+          <div class="songs-body d-flex align-items-end d-md-flex d-none">
             <p class="mb-0 me-auto"># Titolo</p>
             <p class="riproduzione mb-0">Riproduzioni</p>
             <p class="mb-0"><i class="bi bi-clock"></i></p>
@@ -244,7 +256,7 @@
       </div>
     </main>
     <div class="player-container">
-      <div class="playNav player-container d-flex justify-content-between">
+      <div class="playNav player-container d-flex justify-content-md-between justify-content-sm-center">
         <div class="song d-flex align-items-center">
           <!-- <div class="songImgContainer d-flex ms-3 my-3">
             <img class="img-fluid" src="assets/imgs/search/image-15.jpg" />
@@ -257,7 +269,7 @@
         </div>
         <!-- --------play------ -->
         <div class="play d-flex-column">
-          <div class="buttonContainer d-flex justify-content-center align-items-center">
+          <div class="buttonContainer d-flex justify-content-center align-items-center d-md-flex d-none">
             <i class="bi bi-shuffle text-success mx-1"></i>
             <i class="bi bi-skip-start-fill text-white-50 mx-1"></i>
             <i class="fs-4 bi bi-play-circle-fill text-white mx-1"></i>
@@ -266,11 +278,11 @@
           </div>
           <!-- ----------------- -->
 
-          <div class="timing d-flex justify-content-between align-items-center">
+          <div class="timing d-flex justify-content-between align-items-center d-md-flex d-none">
             <p class="text-white-50 mb-0 pe-2">0:58</p>
             <div class="containerProgressBar">
               <div
-                class="progress firstBar bg-secondary"
+                class="progress firstBar bg-secondary d-md-flex d-none"
                 role="progressbar"
                 aria-label="Example 1px high"
                 aria-valuenow="25"
@@ -286,11 +298,14 @@
           </div>
         </div>
         <div class="volume d-flex align-items-center">
-          <i class="bi bi-mic text-white-50 pe-2"></i>
-          <i class="bi bi-list text-white-50 pe-2"></i>
+          <i class="bi bi-mic text-white-50 pe-2 d-md-flex d-none"></i>
+          <i class="bi bi-list text-white-50 pe-2 d-md-flex d-none"></i>
+          <!-- <p class="m-0 me-2 text-light d-md-none d-sm-flex">nessun brano in riproduzione</p> -->
           <i class="bi bi-speaker text-white-50 pe-2"></i>
-          <i class="bi bi-volume-up text-white-50 pe-2"></i>
-          <div class="containerProgressBar pe-2">
+          <i class="bi bi-heart text-white-50 pe-2 d-md-none d-flex"></i>
+          <i class="bi bi-play-fill text-white-50 pe-2 d-md-none d-flex fs-2"></i>
+          <i class="bi bi-volume-up text-white-50 pe-2 d-md-flex d-none"></i>
+          <div class="containerProgressBar pe-2 d-md-flex d-none">
             <div
               class="progress volBar"
               role="progressbar"
@@ -303,7 +318,23 @@
               <div class="progress bg-white" style="width: 25%"></div>
             </div>
           </div>
-          <i class="bi bi-arrows-fullscreen text-white-50 pe-2"></i>
+          <i class="bi bi-arrows-fullscreen text-white-50 pe-2 d-md-flex d-none"></i>
+        </div>
+      </div>
+    </div>
+    <div id="invisible-bar" class="d-flex justify-content-center flex position-fixed bottom-0 w-100">
+      <div class="d-flex flex-row gap-5 d-md-none d-flex my-3">
+        <div class="text-center">
+          <i class="bi bi-house-door-fill text-light"></i>
+          <p class="text-light mb-0">Home</p>
+        </div>
+        <div class="text-center">
+          <i class="bi bi-search text-light"></i>
+          <p class="text-light mb-0">Search</p>
+        </div>
+        <div class="text-center">
+          <i class="bi bi-music-note-list text-light"></i>
+          <p class="text-light mb-0">Library</p>
         </div>
       </div>
     </div>
