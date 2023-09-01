@@ -13,6 +13,8 @@ const caricamento = async () => {
     event.preventDefault();
     const row = document.getElementById("row");
     const row2 = document.getElementById("row-2");
+    row2.classList.remove("row-cols-2");
+    row2.classList.add("row-cols-1");
     row.innerHTML = "";
     row2.innerHTML = "";
 
@@ -27,7 +29,9 @@ const caricamento = async () => {
 
     // console.log(data);
     // console.log(data2);
-    album.classList.remove("d-none");
+
+    // album.classList.remove("d-none");
+    album.classList.add("d-md-inline-flex");
     data.forEach((data) => {
       console.log(data.album.title);
       const col = document.createElement("div");
@@ -146,7 +150,9 @@ window.onload = async () => {
 
     // console.log(data);
     // console.log(data2);
+    const album = document.getElementById("album");
     album.classList.add("d-none");
+
     data.forEach((data) => {
       console.log(data.album.title);
       const col = document.createElement("div");
